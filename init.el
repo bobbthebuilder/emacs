@@ -52,7 +52,8 @@
 			 magit
 			 markdown-mode
 			 undo-tree
-			 ;rainbow-delimiters		      
+			 ;rainbow-delimiters
+			 smooth-scrolling	
 			 yasnippet))
        
 (defun cfg:install-packages ()
@@ -242,6 +243,29 @@
 ;; ==============
 (global-undo-tree-mode)
 
+;; ================
+;; smooth scrolling
+;; ===============
+;; Scroll line by line
+(setq redisplay-dont-pause t)
+;; number of lines at the top and bottom of a window.
+(setq scroll-margin 2)
+;; Controls if scroll commands move point to keep its screen position unchanged.
+(setq scroll-preserve-screen-position nil)
+
+(require 'smooth-scrolling)
+;; four line at a time
+(setq mouse-wheel-scroll-amount '(4 ((shift) . 4)))
+;; accelerate scrolling
+(setq mouse-wheel-progressive-speed 't)
+;; scroll window under mouse
+(setq mouse-wheel-follow-mouse 't)
+;; keyboard scroll four line at a time
+(setq scroll-step 4)
+;; number of lines at the top and bottom of a window.
+(setq smooth-scroll-margin 3)
+(setq smooth-scroll-strict-margins 't)
+
 ;; ====================
 ;; custom key shortcuts
 ;; ====================
@@ -250,7 +274,7 @@
 (global-set-key "\M-g" 'goto-line)
 
 ;; =======================
-;; Colorize modes by theme 
+;; colorize modes by theme 
 ;; =======================
 
 (deftheme df "Customizable color theme for Emacs24+")
