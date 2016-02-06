@@ -36,6 +36,7 @@ That's all.
 
 | Key         | Action                                                | 
 | ------------|:-----------------------------------------------------:|
+| F2          | `M-x eshell` to lauch shell inside emacs              |
 | F5	      | `M-x compile` with gcc call if there is no makefile   | 
 | Tab         | indent or complete with yasnippet		      |
 | M-g _line_  | jump to line _line_                                   | 

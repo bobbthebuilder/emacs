@@ -121,7 +121,6 @@
 ;; =============
 ;; flycheck-mode
 ;; =============
-(require 'flycheck)
 
 (add-hook 'c++-mode-hook 'flycheck-mode)
 (add-hook 'c-mode-hook 'flycheck-mode)
@@ -134,14 +133,12 @@
 ;; ==================================
 ;; enable semantic-mode
 ;; ==================================
-(require 'semantic)
 (semantic-mode 1)
 
 ;; ==============
 ;; yasnippet-mode
 ;; ==============
 ;(add-to-list 'load-path "~/emacs.d/yasnippet")
-(require 'yasnippet)
 (yas-global-mode 1)
 
 (defun check-expansion ()
@@ -171,7 +168,6 @@
 ;; ===================================================
 ;; make M-x compile smarter in order to guess language
 ;; ===================================================
-(require 'compile)
 (defvar compile-guess-command-table
   '((c-mode       . "gcc -Wall -g %s -o %s -lm")
     (c++-mode     . "g++ -Wall %s -o %s -std=c++1z")))
@@ -222,7 +218,6 @@
 ;; enable magit mode
 ;; =================
 (add-to-list 'load-path "~/.emacs.d/site-lisp/magit/lisp")
-(require 'magit)
 
 (with-eval-after-load 'info
   (info-initialize)
@@ -252,8 +247,6 @@
 (setq scroll-margin 2)
 ;; Controls if scroll commands move point to keep its screen position unchanged.
 (setq scroll-preserve-screen-position nil)
-
-(require 'smooth-scrolling)
 ;; four line at a time
 (setq mouse-wheel-scroll-amount '(4 ((shift) . 4)))
 ;; accelerate scrolling
@@ -269,6 +262,7 @@
 ;; ====================
 ;; custom key shortcuts
 ;; ====================
+(global-set-key [f2] 'eshell)   
 (global-set-key [f5] 'compile)
 
 (global-set-key "\M-g" 'goto-line)
